@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>展示列表</title>
+    <script src="js/gsap.min.js" defer></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        width: 300px;
+        height: 200px;
+      }
+      .center {
+        width: 100%;
+        height: 100vh;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      ul {
+        list-style: none;
+      }
+      img {
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+      }
+      div {
+        text-align: center;
+      }
+      ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+      .l1 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+      }
+      li {
+        height: 260px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <div class="box">
+        <ul class="l1">
+          <li>
+            <img src="./images/avatar.jpg" alt="" />
+            <div>我是一个美女</div>
+          </li>
+          <li>
+            <img src="./images/avatar.jpg" alt="" />
+            <div>我是一个美女</div>
+          </li>
+          <li>
+            <img src="./images/avatar.jpg" alt="" />
+            <div>我是一个美女</div>
+          </li>
+          <li>
+            <img src="./images/avatar.jpg" alt="" />
+            <div>我是一个美女</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        gsap.from(".l1 li", {
+          scale: 0.5,
+          y: -50,
+          opacity: 0,
+          stagger: 0.4,
+          ease: "back.in",
+        });
+      });
+      document.querySelectorAll(".l1 li").forEach((item) => {
+        item.addEventListener("mouseenter", function () {
+          gsap.to(this, {
+            scale: 1.1,
+            duration: 0.3,
+            ease: "back.out",
+          });
+        });
+        item.addEventListener("mouseleave", function () {
+          gsap.to(this, {
+            scale: 1,
+            duration: 0.3,
+            ease: "back.out",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

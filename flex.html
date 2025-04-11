@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex 一排固定列数自动换行</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: #acacac;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap; /* 超过自动换行 */
+        gap: 20px; /* 控制中间间距 */
+        padding: 0;
+      }
+
+      .box {
+        width: calc(
+          (100% - 60px) / 4
+        ); /* 一排放 3 个，2 个 gap=40px  一排放 4 个，3 个 gap=60px */
+        height: 100px;
+        background-color: #f66;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 24px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+    </div>
+  </body>
+</html>
